@@ -1,8 +1,10 @@
-const express = require('express');
+// backend/src/routes/oauth.mjs
+import express from 'express';
+import { OAuth2Client } from 'google-auth-library';
+import User from '../database/schemas/user.mjs'; // Ensure this is .mjs
+import fetch from 'node-fetch'; // Ensure node-fetch is installed
+
 const router = express.Router();
-const { OAuth2Client } = require('google-auth-library');
-const User = require('../database/schemas/user'); // Import the User model
-const fetch = require('node-fetch'); // Ensure node-fetch is installed
 
 router.get('/', async (req, res) => {
     const code = req.query.code;
@@ -44,4 +46,4 @@ router.get('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router; // Change to export default
