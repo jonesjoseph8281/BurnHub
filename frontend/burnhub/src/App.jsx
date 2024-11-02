@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import GoogleAuthButton from './components/GoogleAuthButton';
+import OAuthRedirect from './pages/OAuthRedirect';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<GoogleAuthButton />} />
+                <Route path="/oauth" element={<OAuthRedirect />} />
+            </Routes>
+        </Router>
+    );
+};
 
-  return (
-    <div className="hi">
-      <h1>hiiiii</h1>
-    </div>
-  )
-}
-
-export default App
+export default App;
