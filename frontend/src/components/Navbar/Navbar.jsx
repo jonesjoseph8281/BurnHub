@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BsPerson } from 'react-icons/bs';
 import axios from 'axios';
 
+
 import './NavbarStyles.css'; // Import the CSS file
 
 function Navbar() {
@@ -11,7 +12,7 @@ function Navbar() {
 
   const handleSignIn = async () => {
     try {
-      const response = await axios.post(process.env.BACKEND_URL + '/request');
+      const response = await axios.post(import.meta.env.VITE_BACKEND_URL + '/request');
       window.location.href = response.data.url; // Redirect to Google sign-in URL
     } catch (error) {
       console.error('Error during Google sign-in:', error);

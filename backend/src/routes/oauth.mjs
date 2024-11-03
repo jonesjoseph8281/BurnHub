@@ -1,7 +1,7 @@
 // backend/src/routes/oauth.mjs
 import express from 'express';
 import { OAuth2Client } from 'google-auth-library';
-import User from '../database/schemas/user.mjs'; // Ensure this is .mjs
+// import User from '../database/schemas/user.mjs'; // Ensure this is .mjs
 import fetch from 'node-fetch'; // Ensure node-fetch is installed
 
 const router = express.Router();
@@ -28,15 +28,15 @@ router.get('/', async (req, res) => {
         const { name: username, email } = userData; // Extract name and email from Google data
 
         // Check if the user already exists in the database
-        let user = await User.findOne({ email });
-        if (!user) {
-            // If user does not exist, create a new user
-            user = new User({ username, email });
-            await user.save();
-            console.log('New user created:', user);
-        } else {
-            console.log('User already exists:', user);
-        }
+        // let user = await User.findOne({ email });
+        // if (!user) {
+        //     // If user does not exist, create a new user
+        //     user = new User({ username, email });
+        //     await user.save();
+        //     console.log('New user created:', user);
+        // } else {
+        //     console.log('User already exists:', user);
+        // }
 
         // Redirect to the frontend with user data (you can add it as query params if needed)
         res.redirect(redirectUrl);

@@ -1,9 +1,9 @@
 // backend/src/index.mjs
 import express from 'express';
-import mongoose from 'mongoose';
+
 import dotenv from 'dotenv';
 import badAdviceRoutes from './routes/badAdvice.mjs'; // Ensure this is .mjs
-import { connectToDB } from './database/index.mjs'; // Ensure this is .mjs too, if applicable
+// import { connectToDB } from './database/index.mjs'; // Ensure this is .mjs too, if applicable
 import cors from 'cors';
 import requestRoute from './routes/request.mjs'; // Ensure this is .mjs
 import oauthRoute from './routes/oauth.mjs'; // Ensure this is .mjs
@@ -22,6 +22,6 @@ app.use('/auth/google/callback', oauthRoute);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    connectToDB();
+    // connectToDB();
     console.log(`Server is running on port ${PORT}`);
 });
