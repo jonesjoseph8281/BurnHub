@@ -10,14 +10,10 @@ import oauthRoute from './routes/oauth.mjs'; // Ensure this is .mjs
 
 dotenv.config();
 
-var corsOptions = {
-    origin: 'https://burn-hub-frontend.vercel.app/',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 
 const app = express();
 app.use(express.json()); // for parsing application/json
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Use the badAdvice routes
 app.use('/bad-advice', badAdviceRoutes);
