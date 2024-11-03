@@ -8,12 +8,12 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     const code = req.query.code;
-    const redirectUrl = 'http://localhost:5173/oauth';
+    const redirectUrl = process.env.FRONTEND_URL + "/oauth";
 
     const oAuth2Client = new OAuth2Client(
         process.env.CLIENT_ID,
         process.env.CLIENT_SECRET,
-        'http://localhost:3000/auth/google/callback'
+        process.env.BACKEND_URL + '/auth/google/callback'
     );
 
     try {
