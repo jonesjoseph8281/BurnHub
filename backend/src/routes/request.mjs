@@ -8,10 +8,10 @@ dotenv.config();
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'http://burn-hub-frontend.vercel.app');
+    res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL);
     res.header('Referrer-Policy', 'no-referrer-when-downgrade');
 
-    const redirectUrl = 'https://burn-hub.onrender.com/auth/google/callback';
+    const redirectUrl = process.env.BACKEND_URL + '/auth/google/callback';
     
     const oAuthClient = new OAuth2Client(
         process.env.CLIENT_ID,
