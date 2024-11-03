@@ -10,11 +10,12 @@ const genAI = new GoogleGenerativeAI(process.env.OPENAI_API_KEY)
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const { prompt } = req.body;
 
     try {
-        console.log('noice');
-        const response = await model.generateContent(`Give sarcastic replies and bad advices: ${prompt}`);
+        console.log(prompt);
+        const response = await model.generateContent(`Give me a small paragraph in a sarcastic way about  ${prompt}`);
 
         res.json({ advice: response.response.text() }); // Adjust based on the response structure
     } catch (error) {

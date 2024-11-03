@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './BadAdvise.css'; // Import the CSS
 
 function BadAdvice() {
     const [prompt, setPrompt] = useState('');
@@ -10,6 +11,9 @@ function BadAdvice() {
         try {
             const response = await fetch('http://localhost:3000/bad-advice', {
                 method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({ prompt }),
             });
 
