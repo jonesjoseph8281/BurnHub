@@ -9,7 +9,7 @@ function BadAdvice() {
         setAdvice("ChadGPT is thinking...");
 
         try {
-            const response = await fetch('http://localhost:3000/bad-advice', {
+            const response = await fetch(process.env.BACKEND_URL + '/bad-advice', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

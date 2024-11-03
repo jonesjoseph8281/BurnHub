@@ -11,7 +11,7 @@ function Navbar() {
 
   const handleSignIn = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/request');
+      const response = await axios.post(process.env.BACKEND_URL + '/request');
       window.location.href = response.data.url; // Redirect to Google sign-in URL
     } catch (error) {
       console.error('Error during Google sign-in:', error);
