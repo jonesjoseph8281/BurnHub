@@ -11,7 +11,7 @@ function App() {
   const fetchAdvice = async (question) => {
     setIsLoading(true); // Start loading animation
     try {
-      const response = await axios.post("http://127.0.0.1:5000/get-bad-advice", { question });
+      const response = await axios.post("https://burnhub.onrender.com/get-bad-advice", { question });
       if (response.data && response.data.advice) {
         setAdvice(response.data.advice);
       } else {
