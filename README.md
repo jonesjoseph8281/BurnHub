@@ -1,0 +1,1 @@
+BurnHub is the ultimate wisdom dispenser—for those who enjoy making terrible life choices. Got a question? We’ve got the dumbest, most useless advice you never asked for! Whether you're looking to ruin your career, destroy friendships, or just make your life a chaotic mess, BurnHub is here to guide you straight into disaster. Because who needs good advice anyway?
